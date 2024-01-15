@@ -6,7 +6,7 @@ const RegisterPage = () => {
     <>
       <Navbar />
       <main className="md:w-[80%] mx-auto p-4">
-        <div className="grid grid-cols-2 ">
+        <div className="grid md:grid-cols-2 grid-cols-1 ">
           <div className="hidden md:flex md:items-center md:justify-center">
             <h2 className="font-head text-5xl font-bold text-violet-50">
               Expand Your Reach and Sell More Tickets with Us!
