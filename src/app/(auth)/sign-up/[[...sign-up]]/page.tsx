@@ -16,7 +16,7 @@ const RegisterPage = () => {
             <SignUp
               appearance={{
                 elements: {
-                  rootBox: "w-full font-body",
+                  rootBox: "w-full font-body h-screen",
                   card: "w-full space-y-6  bg-transparent text-violet-50",
                   header: "hidden",
                   formFieldLabel:

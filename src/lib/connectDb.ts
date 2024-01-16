@@ -1,22 +1,17 @@
 import mongoose from "mongoose";
 
-const mongodbUri = process.env.MONGODB_URI;
-
-let cached = (global as any).mongoose || { conn: null, promise: null };
-
+// function to connect mongodb
 export const connectDb = async () => {
-  if (cached.conn) return cached.conn;
+  try {
+    if (mongoose.connections[0].readyState == 1) {
+      return;
+    } else {
+      // connect the db
+      await mongoose.connect(process.env.MONGODB_URI as string);
 
-  if (!mongodbUri) throw new Error("Connection String is Missing");
-
-  cached.promise =
-    cached.promise ||
-    mongoose.connect(mongodbUri, {
-      dbName: "ticks",
-      bufferCommands: false,
-    });
-
-  cached.conn = await cached.promise;
-
-  return cached.conn;
+      console.log("Connected Successfully");
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
