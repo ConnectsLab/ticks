@@ -5,24 +5,26 @@ const RegisterPage = () => {
   return (
     <>
       <Navbar />
-      <main className="md:w-[80%] mx-auto p-4">
-        <div className="grid md:grid-cols-2 grid-cols-1 ">
-          <div className="hidden md:flex md:items-center md:justify-center">
-            <h2 className="font-head text-5xl font-bold text-violet-50">
-              Expand Your Reach and Sell More Tickets with Us!
-            </h2>
+      {/* container */}
+      <main className="md:w-[80%] mx-auto h-screen">
+        {/* grid container */}
+        <div className="grid grid-cols-1 md:grid-cols-4 h-full place-items-center">
+          <div className="hidden  col-span-2 md:flex  p-3 justify-center  items-center">
+            <h1 className="font-head text-6xl font-bold capitalize text-white">
+              Experience the best, <br /> event organization.
+            </h1>
           </div>
-          <div>
+          <div className="w-full col-span-2 h-full">
             <SignUp
               appearance={{
                 elements: {
-                  rootBox: "w-full font-body h-screen",
-                  card: "w-full space-y-6  bg-transparent text-violet-50",
+                  rootBox: "w-full font-body h-full ",
+                  card: "w-full space-y-6  bg-transparent text-violet-50 shadow-none",
                   header: "hidden",
                   formFieldLabel:
                     "font-body capitalize  font-light text-violet-50",
                   formButtonPrimary:
-                    "bg-[#4C37A0] p-4 text-xl font-body hover:bg-[#4C37A0] font-light capitalize",
+                    "bg-[#4C37A0] p-4 text-xl font-head hover:bg-[#4C37A0] font-bold capitalize",
                   formFieldInput: "bg-[#7C7EA6] p-4 font-body text-violet-50",
                   selectButton:
                     "font-body p-4 text-violet-500 border border-violet-50 bg-violet-100 hover:bg-violet-100",

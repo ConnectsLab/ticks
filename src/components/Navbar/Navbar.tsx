@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MobileNav from "./MobileNav";
+// import MobileNav from "./MobileNav";
 
 const links = [
   {
@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <MobileNav />
+      {/* <MobileNav /> */}
     </>
   );
 };
