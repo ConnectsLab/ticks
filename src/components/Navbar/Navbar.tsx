@@ -7,8 +7,8 @@ const links = [
     title: "see events ",
   },
   {
-    href: "/sign-up",
-    title: "become a vendor",
+    href: "/events/create",
+    title: "Create Event",
   },
 ];
 
