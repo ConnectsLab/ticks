@@ -22,3 +22,11 @@
 // };
 
 // export default CreateEvent;
+
+export default function CreateEvent() {
+  return (
+    <div>
+      <h4>create Event</h4>
+    </div>
+  );
+}

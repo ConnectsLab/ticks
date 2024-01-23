@@ -1,3 +1,11 @@
+export default function UpdateEvent() {
+  return (
+    <div>
+      <h4>Update Event</h4>
+    </div>
+  );
+}
+
 // import EventForm from "@/components/shared/EventForm";
 // import { getEventById } from "@/lib/actions/event.action";
 // import { currentUser } from "@clerk/nextjs";
