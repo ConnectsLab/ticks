@@ -1,10 +1,29 @@
+import { IEvent } from "@/database/event.model";
 import { formatDateTime, formatPrice } from "@/lib/utilis";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Edit3 } from "lucide-react";
 import Link from "next/link";
 
-const EventsCard = ({ event }: any) => {
+type EventsCardTypes = {
+  event: IEvent;
+  userId: string | unknown;
+};
+
+const EventsCard = ({ event, userId }: EventsCardTypes) => {
+  // let check if the user is same as the event organizers
+  const isUserOrganizer = event.organizer._id === userId;
+
   return (
-    <div key={event._id} className="shadow-md bg-slate-800 rounded-lg">
+    <div key={event._id} className="shadow-md bg-slate-800 rounded-lg relative">
+      {/* Edit button */}
+      {isUserOrganizer && (
+        <div className="absolute top-2 right-2">
+          <button className="bg-violet-500 rounded-full p-4">
+            <Link href={`/events/${event._id}/update`}>
+              <Edit3 strokeWidth={1} color="#fff" />
+            </Link>
+          </button>
+        </div>
+      )}
       {/* image */}
       <div className="h-[300px] object-center">
         <img src={event.imageUrl} alt={event.title} className="h-full w-full" />
@@ -26,12 +45,12 @@ const EventsCard = ({ event }: any) => {
             {event.isFree ? "Free" : formatPrice(event.price)}
           </span>
         </div>
-        <h2 className="font-head font-bold capitalize text-xl">
+        <h2 className="font-head font-bold capitalize text-xl line-clamp-1">
           {event.title}
         </h2>
         {/* event Organizers */}
         <div className="capitalize font-body font-light">
-          by {event.organizer.firstName} | {event.organizer.lastName}
+          by {event.organizer.firstName} {event.organizer.lastName}
         </div>
         {/* See More Info */}
         <Link
