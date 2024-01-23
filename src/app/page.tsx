@@ -1,18 +1,18 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import Collections from "@/components/shared/Collections";
-import { getAllEvents } from "@/lib/actions/event.action";
-import { currentUser } from "@clerk/nextjs";
+// import Collections from "@/components/shared/Collections";
+// import { getAllEvents } from "@/lib/actions/event.action";
+// import { currentUser } from "@clerk/nextjs";
 import Link from "next/link";
 
 export default async function Home() {
   // fetch all events
-  const events = await getAllEvents();
+  // const events = await getAllEvents();
 
   // get the current user Id
-  const user = await currentUser();
+  // const user = await currentUser();
 
-  const userId = user?.publicMetadata.userId;
+  // const userId = user?.publicMetadata.userId;
 
   return (
     <>
@@ -38,7 +38,7 @@ export default async function Home() {
         <h4 className="md:text-3xl text-3xl font-head font-bold text-violet-50 my-4">
           Latest Events
         </h4>
-        <Collections data={events} userId={userId} />
+        {/* <Collections data={events} userId={userId} /> */}
       </div>
       <Footer />
     </>

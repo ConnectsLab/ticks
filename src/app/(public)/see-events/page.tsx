@@ -1,10 +1,10 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 // import Collections from "@/components/shared/Collections";
-import { getAllEvents } from "@/lib/actions/event.action";
+// import { getAllEvents } from "@/lib/actions/event.action";
 
 const SeeEvents = async () => {
-  const events = await getAllEvents();
+  // const events = await getAllEvents();
 
   return (
     <>
